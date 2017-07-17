@@ -28,7 +28,7 @@ public class HelloController {
 	@RequestMapping(value = "{id}", method = RequestMethod.GET, produces={"application/json"})
 	public @ResponseBody Employee getEmployee(@PathVariable String id) {
 		
-		Long idnum = Long.getLong(id);
+		Long idnum = (long) Integer.parseInt(id);
 		Employee e = new Employee();
 		e.setId(idnum);
 		e.setFirstName("Koutilya");
